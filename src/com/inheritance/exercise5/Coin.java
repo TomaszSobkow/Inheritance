@@ -1,5 +1,7 @@
 package com.inheritance.exercise5;
 
+import com.inheritance.exercise3.BankAccount;
+
 public class Coin {
 
     private double value;
@@ -10,31 +12,22 @@ public class Coin {
         value = v;
         name = n;
     }
-    //When we override, we must maintain the same signature as Object superclass
-    //The argument is of type Object BUT it CAN BE ANY SUBCLASS ALSO!!!!
+
     @Override
-    public boolean equals(Object otherObject) {
-        //Even though we assume that the argument is of type Coin, we must cast
-        //the object so that we can use it
-        Coin other;
-        //other = (Coin) otherObject; //could do it like this
-        //The code below is actually safer to cast than above - why?
-        //Because in theory, the argument could be any object reference
-//(String,BankAccount, etc.)
-        if (otherObject instanceof Coin) {
-            other = (Coin) otherObject;
-        }
-        else {
-            return false; // the two objects cannot be equal
-        }
-        if ((this.value == other.value) && //Note == for primitives
-                (this.name.equals(other.name))) {
-            return true;
-        }
-        else {
-            return false;
-        }
+    public boolean equals(Object obj) {
+
+        Coin temp;
+        if( obj instanceof Coin ){
+            temp = (Coin)obj; }
+        else { return false; }
+
+        return (this.value == temp.value) && (this.name.equals(temp.name));
     }
+
+    public boolean equals(BankAccount bankAccount){
+        return true;
+    }
+
     public String toString() {
         return "[Name: " + name + ", Value: " + value + "]";
     }

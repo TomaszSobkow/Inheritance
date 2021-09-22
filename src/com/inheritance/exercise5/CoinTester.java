@@ -7,6 +7,8 @@ public class CoinTester {
         Coin coin2 = new Coin(20,"Twenty");
         Coin coin3 = new Coin(30,"Forty");
 
-        
+        System.out.println(coin1.equals(coin2));
+
+
     }
 }
