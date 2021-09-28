@@ -12,6 +12,9 @@ public class CheckingAccount extends BankAccount{
         transactionCount = 0;
     }
 
+
+
+
     @Override
     public void deposit(double amount) {
         transactionCount++;
@@ -35,4 +38,6 @@ public class CheckingAccount extends BankAccount{
     public void setTransactionCount(int transactionCount) {
         this.transactionCount = transactionCount;
     }
+
+
 }

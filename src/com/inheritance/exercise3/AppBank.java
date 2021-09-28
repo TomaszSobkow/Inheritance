@@ -1,17 +1,15 @@
 package com.inheritance.exercise3;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class AppBank {
 
-    public static ArrayList<BankAccount> accounts = new ArrayList<>();
+    public static ArrayList<SavingsAccount> accounts = new ArrayList<>();
 
     public static void main(String[] args) {
-        transfer();
-//    AppBank.populateArray();
-//    AppBank.printAllAccounts();
-//    AppBank.addBalance();
-//    AppBank.printAllAccounts();
+     populateArray();
+
     }
 
     public static void addBalance(){
@@ -23,9 +21,12 @@ public class AppBank {
     }
 
     public static void populateArray(){
-        accounts.add(new BankAccount(100));
-        accounts.add(new SavingsAccount(10,2000));
-        accounts.add(new CheckingAccount(300));
+        accounts.add(new SavingsAccount(11,2000.2));
+        accounts.add(new SavingsAccount(10,200.0));
+        accounts.add(new SavingsAccount(4,300.12));
+        accounts.add(new SavingsAccount(5,3000.45));
+        accounts.add(new SavingsAccount(1,2000.78));
+        accounts.add(new SavingsAccount(12,1100.909));
 
     }
 

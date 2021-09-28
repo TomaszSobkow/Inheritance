@@ -1,6 +1,6 @@
 package com.abstractClass;
 
-public class Salary extends Employee{
+public class Salary extends Employee implements Comparable<Salary>{
 
     private double salary;
 
@@ -9,6 +9,10 @@ public class Salary extends Employee{
         setSalary(salary);
     }
 
+    @Override
+    public String toString() {
+        return  super.toString()+ " "+ getSalary();
+    }
 
     @Override
     public void mailCheck() //this is overriding and should have @Override ideally
@@ -29,5 +33,10 @@ public class Salary extends Employee{
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public int compareTo(Salary o) {
+        return (int)(this.getSalary() - o.getSalary());
     }
 }

@@ -18,10 +18,19 @@ public class BankAccount {
     }
 
     public void transfer(double amountToTransfer, BankAccount targetAccount){
-
         this.withDraw(amountToTransfer); // source of amount to transfer "this2 means instance which call this method
         targetAccount.deposit(amountToTransfer); // target account
         System.out.println("The amount "+ amountToTransfer + " has been transferred to account " + targetAccount.getClass().toString().substring(targetAccount.getClass().toString().lastIndexOf('3')+2));
+    }
+
+//    @Override
+//    public int compareTo(BankAccount o) {
+//        return (int)(this.getBalance() - o.getBalance());
+//    }
+
+    @Override
+    public String toString() {
+        return "Balance = " + balance;
     }
 
     public double getBalance() { return balance;}
